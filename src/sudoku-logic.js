@@ -1,10 +1,5 @@
-export function Sudoku (){
-  var gameBoard = [
-    [1],[2],[3],
-    [4],[5],[6],
-    [7],[8],[9],
-];
-var row = function (row1, row2, row3, row4, row5, row6, row7, row8, row9){
+export function Sudoku (row1, row2, row3, row4, row5, row6, row7, row8, row9){
+  
   this.row1 = row1;
   this.row2 = row2;
   this.row3 = row3;
@@ -14,21 +9,27 @@ var row = function (row1, row2, row3, row4, row5, row6, row7, row8, row9){
   this.row7 = row7;
   this.row8 = row8;
   this.row9 = row9;
+} 
+
+export function Row(one, two, three, four, five, six, seven, eight, nine){
+this.one = one;
+this.two = two;
+this.three = three;
+this.four = four;
+this.five = five;
+this.six = six;
+this.seven = seven;
+this.eight = eight;
+this.nine = nine;
 }
 
-// var column = function (column1, column2, column3, column4, column5, column6, column7, column8, column9){
-//   this.column1 = column1;
-//   this.column2 = column2;
-//   this.column3 = column3;
-//   this.column4 = column4;
-//   this.column5 = column5;
-//   this.column6 = column6;
-//   this.column7 = column7;
-//   this.column8 = column8;
-//   this.column9 = column9;
-// }
-}
-
-Sudoku.prototype.checkRow = function (){
-
+Row.prototype.checkRow = function (){
+  var rowArr = Object.values(this);
+  var count = 0
+  for(var num=1; num <= 9; num++){
+    if (rowArr.includes(num)){
+      count = count + 1;
+    }
+  }
+  return count;
 }

@@ -1,17 +1,10 @@
-import { Sudoku } from '../src/sudoku-logic.js';
+import { Row } from '../src/sudoku-logic.js';
 
 describe('Sudoku', function() {
 
-  
-    it('should correctly determine whether the ROW is GOOD', function(){
-      //var RowIsWrong=
-      var SudokuItem = new Sudoku(0,0);
-      var SudokuItem1 = new Sudoku(0,1);
-
-      expect(notTriangle.checkRow()).toEqual("the row is good");
+    it('should correctly determine whether the ROW is 9 units', function(){
+      var row = new Row (1,2,3,4,5,6,7,8,9);
+      expect(row.checkRow()).toEqual(9);
     });
 
-
-
-  
   });
